@@ -1,6 +1,6 @@
 # Getting help
 
-- **Installation, how-to and the meaning of a screen:** read `README.md` (Chinese) or `README_en.md` first. The FAQ is in section 15 of `README.md`.
+- **Installation, how-to and the meaning of a screen:** read `README.md` first. The complete Chinese manual, with a FAQ in section 15, is `docs/用户手册_中文.md`.
 - **A bug:** open an issue with the *Bug report* form. Include the version, your operating system, the steps, and the expected and actual result.
 - **A feature or change request:** open an issue with the *Feature request* form. Explain the laboratory problem it solves.
 - **Questions about the design or the regulation behind a feature:** open an issue and label it `question`, or use GitHub Discussions if it is enabled for this repository.

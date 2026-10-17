@@ -10,7 +10,7 @@
 ## Checklist
 
 - [ ] `python -X utf8 -m unittest discover -s tests` passes locally
-- [ ] Documentation updated where behaviour changed (README / README_en / URS / CHANGELOG)
+- [ ] Documentation updated where behaviour changed (README / Chinese manual / URS / CHANGELOG)
 - [ ] New UI strings added to `app/static/i18n_extra_en.js` (`python tools/i18n_missing.py` checks)
 - [ ] No credentials, personal data, or real project / method / document content in the diff or in test fixtures
 - [ ] Audit trail, e-signature and separation-of-duties rules are unchanged, or the description explains the change and why

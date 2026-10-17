@@ -1,3 +1,5 @@
+> **English summary.** Requirements specification and test traceability (Chinese). Each user requirement has an identifier (URS-n), a description, and the automated tests that check it (`tests/`, named `test_URS<n>_…`). The version history and the list of known gaps are at the end. Requirement numbers are used in code comments and commit messages.
+
 # MethodFlow 用户需求规格（URS）与测试追溯
 
 版本：V0.4　适用程序版本：MethodFlow 0.4.0（数据库结构版本 5）
