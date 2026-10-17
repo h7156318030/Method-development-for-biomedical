@@ -14,6 +14,6 @@ numpy==1.26.4
 pillow==11.3.0
 bcrypt==5.0.0
 # PDF output: reads the outline of the converted PDF to build the static table of contents (optional at runtime, recommended)
-pypdf==6.16.2
+pypdf==6.20.1
 # only needed to run the automated tests (fastapi.testclient)
 httpx==0.28.1
