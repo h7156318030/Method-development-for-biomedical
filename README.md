@@ -1,5 +1,7 @@
 # MethodFlow
 
+[English](README.md) | [中文](README.zh-CN.md)
+
 [![tests](https://github.com/h7156318030/Method-development-for-biomedical/actions/workflows/test.yml/badge.svg)](https://github.com/h7156318030/Method-development-for-biomedical/actions/workflows/test.yml)
 [![license](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
@@ -9,7 +11,7 @@ It is written for laboratories in biomedical and pharmaceutical development (for
 
 > **Not a validated GxP system.** MethodFlow is an auxiliary tool. Regulated use requires your own computerised-system validation (CSV / GAMP 5): risk assessment, IQ/OQ/PQ, SOPs, account management, backup and disaster recovery. The numerical criteria in the templates are **examples** and must be confirmed against your own ATP. Regulatory references marked "to be verified" must be checked against the current source. See [Limitations](#limitations).
 
-Language: the user interface follows the browser language and can be switched at the bottom right ("中文 / EN"). The built-in templates, the knowledge base and the full Chinese user manual are in Chinese (see [Languages](#languages)).
+Languages: the interface follows the browser language and can be switched at the bottom right ("中文 / EN"). Built-in templates and the knowledge base are in Chinese for now. The user manual is available in both languages: [English](docs/user-manual_en.md) and [中文](docs/用户手册_中文.md).
 
 ---
 
@@ -28,14 +30,13 @@ Language: the user interface follows the browser language and can be switched at
 - [Tests](#tests)
 - [Project layout](#project-layout)
 - [Documentation](#documentation)
-- [Languages](#languages)
 - [Contributing, security and license](#contributing-security-and-license)
 - [Limitations](#limitations)
 
 ## What it does
 
 - **Projects and methods.** A project (a product or pipeline container) holds several analytical methods. Each method has its own team and its own nine-stage development record.
-- **Nine stages and six review gates.** From charter and analytical target profile (ATP) through technique selection, risk assessment (FMEA), development plan, feasibility experiments, robustness (DoE), control strategy, to the development report and approval for validation. Gates require a reviewer and, for the plan, the control strategy and the report, an approver (QA).
+- **Nine stages and six review gates.** From charter and analytical target profile (ATP) through technique selection, risk assessment (FMEA), development plan, feasibility experiments, robustness (DoE) and control strategy, to the development report and approval for validation. Gates require a reviewer and, for the plan, the control strategy and the report, an approver (QA).
 - **Separation of duties.** Anyone who edited a stage cannot review or approve it. A reviewer and an approver must be different people.
 - **Electronic signatures.** Signing requires the password to be entered again. Each signature stores the name, time (UTC), meaning, comment, revision number and a SHA-256 hash of the signed content.
 - **Audit trail.** Saves, submissions, signatures, reopenings, document generation and more are recorded in a hash chain (HMAC). Changes made directly in the database are detected.
@@ -99,7 +100,7 @@ Stop the server with Ctrl+C. Data is not affected.
 - The submission check lists everything that blocks a submission, for example missing core content, unfinished experiments, high-risk FMEA items without controls, or no eligible reviewer.
 - Criteria that still carry the "example value" marker produce a warning before the plan or the report is submitted. Confirm them against the ATP and remove the marker.
 
-A short walkthrough is in the in-app beginner guide (left menu, *Beginner guide*).
+A step-by-step walkthrough is in the user manual, [English](docs/user-manual_en.md) (section 4) or [中文](docs/用户手册_中文.md). The app also has a *Beginner guide* in the left menu.
 
 ## Roles and separation of duties
 
@@ -107,7 +108,7 @@ A short walkthrough is in the in-app beginner guide (left menu, *Beginner guide*
 
 **Project roles**: owner, member, viewer.
 
-**Method roles**: owner, author, reviewer, approver (QA), viewer. A person can hold more than one method role, with the restrictions above. Members of a method's team must already belong to the project. Project roles do not grant editing or signing rights on a method.
+**Method roles**: owner, author, reviewer, approver (QA), viewer. A person can hold more than one method role, with the restrictions described in the manual. Members of a method's team must already belong to the project. Project roles do not grant editing or signing rights on a method.
 
 Contributors to a stage (anyone who saved, submitted, or edited its experiments or attachments) can never review or approve that stage.
 
@@ -161,7 +162,7 @@ Create `config.json` in the program folder if you need to change a setting. Writ
 | `webhook_url`, `webhook_kind` | `""`, `generic` | Webhook notifications (`generic`, `wecom`, `feishu`, `dingtalk`) |
 | `public_url` | `""` | Base address used in notification links |
 
-The full list with explanations is in the Chinese manual, [`docs/用户手册_中文.md`](docs/用户手册_中文.md) (section 11.3). **`config.json` may contain SMTP and webhook secrets. Never commit it.**
+The full list with explanations is in the user manual ([English](docs/user-manual_en.md), section 11.3; [中文](docs/用户手册_中文.md), section 11.3). **`config.json` may contain SMTP and webhook secrets. Never commit it.**
 
 ## Data, backup and restore
 
@@ -213,7 +214,7 @@ app/           FastAPI back end (main, workflow, records, compliance, stats, doc
 app/static/    Single-page front end in plain JavaScript (no build step, no CDN; works offline)
 tests/         Automated tests, named after the requirements
 tools/         Backup, restore, admin reset, audit anchor, migration, test report, translation helpers
-docs/          Requirements and traceability, design notes, front-end contract, validation templates
+docs/          User manuals (English and Chinese), requirements and traceability, design notes, validation templates
 run.py         Start-up script
 start.bat      Windows launcher
 backup.bat     Windows backup launcher
@@ -223,25 +224,18 @@ backup.bat     Windows backup launcher
 
 | Document | Language |
 |---|---|
-| `README.md` (this file) | English |
-| [`docs/用户手册_中文.md`](docs/用户手册_中文.md) | Chinese, complete user manual |
-| [`docs/URS_需求与测试追溯.md`](docs/URS_需求与测试追溯.md) | Chinese, requirements and test traceability |
-| [`docs/V0.2需求与设计_项目方法分离与审批级文档.md`](docs/V0.2需求与设计_项目方法分离与审批级文档.md) | Chinese, design of the project/method separation and document engine |
-| [`docs/前端契约.md`](docs/前端契约.md) | Chinese, front-end and API contract |
-| [`docs/后端加固清单.md`](docs/后端加固清单.md) | Chinese, back-end hardening list |
-| [`docs/调研与设计依据.md`](docs/调研与设计依据.md) | Chinese, research and design basis |
+| [`README.md`](README.md) (this file) | English |
+| [`README.zh-CN.md`](README.zh-CN.md) | 中文概览 |
+| [`docs/user-manual_en.md`](docs/user-manual_en.md) | English, complete user manual |
+| [`docs/用户手册_中文.md`](docs/用户手册_中文.md) | 中文，完整用户手册 |
+| [`docs/URS_需求与测试追溯.md`](docs/URS_需求与测试追溯.md) | Chinese (English summary at the top), requirements and test traceability |
+| [`docs/V0.2需求与设计_项目方法分离与审批级文档.md`](docs/V0.2需求与设计_项目方法分离与审批级文档.md) | Chinese (English summary at the top), design notes |
+| [`docs/前端契约.md`](docs/前端契约.md) | Chinese (English summary at the top), front-end and API contract |
+| [`docs/后端加固清单.md`](docs/后端加固清单.md) | Chinese (English summary at the top), back-end hardening list |
+| [`docs/调研与设计依据.md`](docs/调研与设计依据.md) | Chinese (English summary at the top), research and design basis |
 | [`docs/CSV验证模板/`](docs/CSV验证模板/README.md) | English README; IQ/OQ/PQ, risk assessment and SOP starting points |
 | [`CHANGELOG.md`](CHANGELOG.md) | English, release history |
 | [`ROADMAP.md`](ROADMAP.md) | English, open work |
-
-## Languages
-
-- **User interface:** Chinese and English. Switch at the bottom right. The default follows the browser language. English covers the screens; some messages and rarely used texts may still appear in Chinese.
-- **Documents:** Chinese by default; English export covers the fixed text (see above).
-- **Templates, knowledge base, the Chinese manual and most design documents:** Chinese. Translating the templates and the knowledge base is open work (see [ROADMAP.md](ROADMAP.md)).
-- **Source comments and developer tools:** largely Chinese.
-
-Contributions in either language are welcome. Contributor guidance is in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Contributing, security and license
 
