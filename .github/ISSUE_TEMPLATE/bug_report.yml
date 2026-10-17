@@ -1,0 +1,69 @@
+name: Bug report
+description: Something does not work the way the README or the URS document says
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting. **Do not paste real passwords, real project or method names, real documents, or
+        database contents.** Replace them with invented examples. Security problems: see SECURITY.md (private report).
+  - type: input
+    id: version
+    attributes:
+      label: MethodFlow version
+      placeholder: "e.g. 0.4.0 or the commit hash"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Operating system and Python version
+      placeholder: "e.g. Windows 11, Python 3.9.13"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Login and accounts
+        - Projects and methods
+        - Stages, review gates and signatures
+        - Experiments and results
+        - Registry, run records and deviations
+        - Audit trail and inspection pack
+        - Documents (Word / PDF)
+        - English interface
+        - Installation, launcher or backup
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: Screenshots are welcome; remove personal data first.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Console or server log lines around the problem. Remove paths and names that identify you.
+      render: text

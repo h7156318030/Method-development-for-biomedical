@@ -1,0 +1,10 @@
+# normalise text to LF in the repository; the launchers must keep CRLF for cmd.exe
+* text=auto eol=lf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# binary documents and databases must never be diffed or re-encoded
+*.docx binary
+*.pdf binary
+*.db binary
+*.zip binary

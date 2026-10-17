@@ -1,0 +1,32 @@
+# runtime data: never commit (database, uploads, generated documents, backups, audit key, anchors)
+/data/
+*.db
+*.db-wal
+*.db-shm
+.audit_key
+audit_head.json
+*.manifest.json
+
+# local configuration (may contain SMTP or webhook secrets) and environment files
+/config.json
+.env
+
+# local scratch and test artefacts
+/_scratch/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+.lo_profile/
+*.log
+
+# build output
+build/
+dist/
+*.egg-info/
+
+# editors and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
